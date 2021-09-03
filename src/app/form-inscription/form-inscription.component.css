@@ -1,0 +1,13 @@
+.alert {
+    color: firebrick;
+    font-size: large;
+}
+
+.success {
+  color: green;
+  font-size: large;
+}
+
+form {
+    padding-bottom: 50px;
+}

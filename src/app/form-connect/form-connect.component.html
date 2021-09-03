@@ -1,0 +1,27 @@
+<h2>Connexion</h2>
+<form [formGroup]="formulaire" (ngSubmit)="envoyerFormulaire()">
+    <div class="form-item">
+        <label for="login">Login</label>
+        <input type="text" name="login" id="login" formControlName="login">
+        <span class="alert" *ngIf="formulaire.controls.login.errors?.required && formulaire.touched">Le champs est requis</span>
+    </div>
+    <div class="form-item">
+        <label for="mdp">mdp</label>
+        <input type="password" name="mdp" id="mdp" formControlName="mdp">
+        <span class="alert" *ngIf="formulaire.controls.login.errors?.required && formulaire.touched">Le champs est requis</span>
+    </div>
+    <!--<div class="form-item">
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" formControlName="age">
+        <p class="alert" *ngIf="formulaire.controls.age.errors?.min">L'age doit être supérieur à 0</p>
+        <p class="alert" *ngIf="formulaire.controls.age.errors?.max">L'age doit être inférieur à 120</p>
+    </div>
+    <div class="form-item">
+        <label for="email">Adresse Mail</label>
+        <input type="text" name="email" id="email" formControlName="email">
+    </div> !-->
+    <button type="submit" [disabled]="!formulaire.valid">Envoyer</button>
+
+    <p class="success" *ngIf="connection">Connecté</p>
+    <p class="alert" *ngIf="erreur">Login/Mdp invalide</p>
+</form>
